@@ -1,6 +1,6 @@
 
 var currentTab = 0;
-showTab(currentTab); 
+showTab(currentTab);
 
 function showTab(n) {
 
@@ -21,8 +21,8 @@ function showTab(n) {
 }
 
 function nextPrev(n) {
-    var x = document.getElementsByClassName("tab");
-    if (n == 1 && !validateForm()) return false;
+  var x = document.getElementsByClassName("tab");
+  if (n == 1 && !validateForm()) return false;
 
   x[currentTab].style.display = "none";
 
@@ -43,7 +43,7 @@ function validateForm() {
   y = x[currentTab].getElementsByTagName("input");
 
   for (i = 0; i < y.length; i++) {
-    
+
     if (y[i].value == "") {
 
       y[i].className += " invalid";
@@ -51,18 +51,19 @@ function validateForm() {
       valid = false;
     }
   }
-  
+
   if (valid) {
     document.getElementsByClassName("step")[currentTab].className += " finish";
   }
-  return valid; 
+  return valid;
 }
 
 function fixStepIndicator(n) {
-  
+
   var i, x = document.getElementsByClassName("step");
   for (i = 0; i < x.length; i++) {
     x[i].className = x[i].className.replace(" active", "");
   }
   x[n].className += " active";
 }
+  
